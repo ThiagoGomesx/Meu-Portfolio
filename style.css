@@ -1,0 +1,267 @@
+/* ======== RESET BÁSICO ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte global e cores principais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; /* Preto puro */
+    color: #fff; /* Texto branco */
+     
+}
+
+.destaque {
+    color: #b5e0c0;
+}
+
+/* ======== MENU ======== */
+nav {
+    position: fixed; /* Fica fixo no topo */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000; /* Fundo preto */
+    padding: 20px 160px;
+    z-index: 800;
+}
+
+/* LOGO */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.logo span {
+    color: #00FF40; /* Verde neon */
+}
+
+/* LINKS DO MENU */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* BOTÃO PADRÃO */
+.btn {
+    background: #00FF40;
+    color: #000;
+    padding: 20px 20px;
+    border-radius: 45px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+
+}
+.btn:hover {
+    transform: scale(1.1);   /* Aumenta ao passar o mouse */
+}
+
+.btn-contato {
+    font-family: 'Montserrat', sans-serif;
+    background: #00FF40;
+    color: #000;
+    padding: 30px 20px;
+    border-radius: 65px;
+    text-decoration: none;
+    font-size: 25px ;
+    font-weight: bolder;
+    transition: transform 0.3s;
+    margin-top: 40px;
+    display: inline-block;
+}
+.btn-contato:hover {
+    transform: scale(1.1);
+}
+.btn-contato2
+{
+    font-family: 'Montserrat', sans-serif;
+    background: #02fc41;
+    color: #080101;
+    padding: 10px 10px;
+    border-radius: 45px;
+    text-decoration: none;
+    font-size: 20px ;
+    font-weight: bolder;
+    transition: transform 0.3s;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+/* ======== SEÇÃO HOME ======== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 10%;
+}
+.textos {
+    max-width: 50%;
+}
+.textos h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.textos h2 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+.textos span {
+    color: #00FF40; /* Destaque verde */
+    font-size: 1.0em;
+    font-weight: 800;
+}
+
+p {
+    font-size: 1.3em; /* Ajuste o valor para o tamanho desejado */
+}
+
+/* Moldura hexagonal fixa */
+.foto {
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: #00FF40;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Moldura hexagonal simétrica com cantos arredondados e efeito neon */
+.foto {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+
+    /* Hexágono simétrico com cantos arredondados */
+    clip-path: polygon(
+        25% 0%, 75% 0%, 100% 50%,
+        75% 100%, 25% 100%, 0% 50%
+    );
+    background: #0c0000; /* fundo preto para destacar a borda */
+}
+
+/* Borda neon animada */
+.foto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, #00ff40, #00ccff, #2f00ff, #00ff40);
+    background-size: 300% 300%;
+    animation: bordaBrilho 5s linear infinite, pulsar 1.5s ease-in-out infinite;
+    clip-path: inherit;
+    z-index: 1;
+    box-shadow: 0 0 20px #00ff40, 0 0 40px #00ccff, 0 0 60px #ff00ff;
+}
+
+/* Imagem dentro do hexágono */
+.foto .imagem {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: mover 4s ease-in-out infinite alternate;
+}
+
+/* Animação da borda neon */
+@keyframes bordaBrilho {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* ======== SEÇÕES ======== */
+section {
+    padding: 100px 10%;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #00FF40;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #00FF40;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+li {
+    font-size: 20px;   /* aumenta o tamanho da letra das listas */
+    margin-bottom: 8px; /* espaço entre os itens */
+}
+
+/* ======== CARDS DE PROJETOS ======== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05); /* Efeito ao passar o mouse */
+}
+.card img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+/* ======== FORMULÁRIO DE CONTATO ======== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input, textarea, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    background: #00FF40;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+/* ======== RODAPÉ ======== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 30px;
+}
