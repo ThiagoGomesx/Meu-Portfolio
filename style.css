@@ -267,3 +267,93 @@ footer {
     background: #111;
     margin-top: 30px;
 }
+
+
+
+/* ========================================================= */
+/* MEDIA QUERIES PARA RESPONSIVIDADE       */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+  /* ================= AJUSTES GERAIS ================= */
+  body {
+    padding: 0;
+  }
+  
+  section {
+    padding: 50px 5%; /* Reduz o espaçamento interno das seções */
+  }
+
+  /* ================= MENU DE NAVEGAÇÃO ================= */
+  nav {
+    flex-direction: column; /* Organiza os itens do menu em coluna */
+    padding: 20px 5%; /* Aumenta o espaçamento interno do menu */
+    position: static; /* Remove a posição fixa para não cobrir o conteúdo */
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Links do menu em coluna */
+    align-items: center; /* Centraliza os links */
+    gap: 15px; /* Reduz o espaço entre os links */
+  }
+  
+  nav ul li a {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    padding: 10px 20px; /* Reduz o tamanho do botão CV */
+    font-size: 1em;
+    margin-top: 20px;
+  }
+
+  /* ================= SEÇÃO HOME ================= */
+  .hero {
+    flex-direction: column; /* Coloca a foto e os textos um abaixo do outro */
+    text-align: center; /* Centraliza o texto */
+    padding-top: 50px;
+  }
+  
+  .textos {
+    max-width: 100%; /* Permite que o texto ocupe a largura total */
+    margin-bottom: 40px;
+  }
+  
+  .textos h1 {
+    font-size: 1.8em;
+  }
+  
+  .textos h2 {
+    font-size: 1.2em;
+  }
+
+  .foto {
+    width: 250px;
+    height: 250px; /* Reduz o tamanho da foto hexagonal */
+  }
+  
+  .btn-contato {
+    font-size: 1.2em;
+    padding: 20px 25px;
+    margin-top: 20px;
+  }
+
+  /* ================= SEÇÃO PROJETOS ================= */
+  .cards {
+    grid-template-columns: 1fr; /* Coloca os cards de projetos em uma única coluna */
+  }
+  
+  .card img {
+    width: 80%; /* Aumenta a imagem dentro do card */
+  }
+
+  /* ================= RODAPÉ ================= */
+  footer {
+    padding: 20px;
+    font-size: 0.9em;
+  }
+}
